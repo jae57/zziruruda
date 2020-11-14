@@ -1,32 +1,32 @@
 #-------------------------------
 # General Site Settings
-title: Aditu
+title: ZZIRURU
 logo: # You can add own logo. For example '/images/logo.png'.
-description: Aditu is a stylish and modern dark theme with a clean and unique design.
+description: 
 baseurl: "" # The subpath of your site, e.g. /blog
 url: "" # The base hostname & protocol for your site, e.g. http://example.com
-
 
 #-------------------------------
 # Author Settings
 author:
-  name: Brandon Watson
-  avatar: '/images/15.jpg'
+  name: 김 찌루루
+  avatar: '/images/profile.jpg'
 
 
 #-------------------------------
 # Hero Settings
 hero:
-  title: Aditu
-  description: Thoughts, stories and ideas.
-  image: '/images/01.jpg'
+  title: Je serai poète et toi Poèsie
+  description: 나는 시인이 될 테니 너는 그 안의 시가 되어라
+  sub-description: 찌루루다!
+  image: '/images/main.jpg' #'/images/01.jpg'
 
 
 #-------------------------------
 # Contact Settings
 contact:
-  email: your@email.com # Add your email for contant form
-  description: The Force is strong with this one. I have you now. I find your lack of faith disturbing. Hey, Luke! May the Force be with you. She must have hidden the plans in the escape pod. Send a detachment down to retrieve them, and see to it personally, Commander. There’ll be no one to stop us this time! # Add a description of your form
+  email: jaeeee9@gmail.com # Add your email for contant form
+  description: . I have you now. # Add a description of your form
 
 # NOTE
 # Aditu theme comes with a contact form built-in. You can use this form with Formspree service and get up to 50 submissions for free. Also, you can easily switch to another service if you want.
