@@ -1,22 +1,25 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css">
-        <title>지____혜</title>
-        <style>
-            body {
-                font-family: 'NanumSquareRound',sans-serif;
-                background-color: #2A93D5
-            }
-        </style>
-    </head>
-    <body>
-        <h1>Hello!&#x263a;</h1>
-        <h3>ABOUT ME __ JAEEE </h3>
-        안녕하세요 저는 김지혜입니당<br>
-        <br>
-         :)
-    </body>
-</html>
+---
+layout: default
+---
 
+{% include hero.html %}
+
+<div class="container">
+  <div class="row">
+    <div class="col col-12">
+      <div class="container__inner">
+        <div class="contaniner__inner-box">
+          <div class="row grid">
+            {% if site.posts.size > 0 %}
+              {% for post in paginator.posts %}
+                {% include article-content.html %}
+              {% endfor %}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% include pagination.html %}
