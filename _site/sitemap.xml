@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://localhost:4000/2020/11/14/%EA%B3%B5%EB%B6%80%ED%95%9C%EA%B1%B0/</loc>
+<loc>http://localhost:4000/2020/11/14/14-swift-error-handling-1/</loc>
 <lastmod>2020-11-14T14:29:55+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/2020/11/20/01-edit-all-in-xcode-5/</loc>
+<lastmod>2020-11-20T01:53:55+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/about/</loc>
@@ -18,5 +22,11 @@
 </url>
 <url>
 <loc>http://localhost:4000/tag/study/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/tag/post/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/tag/xcode/</loc>
 </url>
 </urlset>

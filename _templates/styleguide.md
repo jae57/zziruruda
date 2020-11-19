@@ -5,6 +5,8 @@ permalink: /styleguide/
 image: '/images/12.jpg'
 ---
 
+<!-- 띄어쓰기는 문장 끝에 공백 두개 넣으면 되고, 한줄 뛰기는 엔터 두번! -->
+
 A paragraph looks like this — dolor amet cray stumptown fingerstache neutra food truck seitan poke cardigan waistcoat VHS snackwave celiac hella. Godard seitan shoreditch flexitarian next level trust fund man braid vegan listicle keytar bitters. Disrupt cray fashion axe unicorn lomo shaman poke glossier keffiyeh snackwave austin tattooed seitan hexagon lo-fi. Lumbersexual irony vaporware, butcher shaman.
 
 ***
@@ -143,6 +145,12 @@ A paragraph looks like this — dolor amet cray stumptown fingerstache neutra fo
 
 ![]({{site.baseurl}}/images/140.jpg)
 *At the concert*
+<!-- 
+사진 넣을 때
+![The best day in my life]({{site.baseurl}}/images/34.jpg)
+*The best day in my life* 
+-->
+
 
 {% highlight markdown %}
   ![]({{site.baseurl}}/images/140.jpg)
