@@ -6,10 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Xcode에서 코드 일괄 변경 단축키</title>
+  <title>Collection 의 indices 와 index(after:) 의 차이</title>
   <meta name='description' content=''>
 
-  <link rel="canonical" href="http://localhost:4000/2020/11/20/01-edit-all-in-xcode-5/">
+  <link rel="canonical" href="http://localhost:4000/2020/11/22/16-collection-indices-6/">
   <link rel="alternate" type="application/rss+xml" title="ZZIRURU" href="/feed.xml">
 
   <!-- Fonts -->
@@ -113,6 +113,10 @@
       
     
   
+    
+      
+    
+  
 </ul>
                 </div>
               </div>
@@ -152,6 +156,10 @@
       
     
   
+    
+  
+    
+      
     
   
     
@@ -222,7 +230,7 @@
   <div class="row">
     <div class="col col-12">
       <div class="image-box">
-        <img class="post-image" src="/images/5(xcode).jpg" alt="Xcode에서 코드 일괄 변경 단축키">
+        <img class="post-image" src="/images/6(swift).png" alt="Collection 의 indices 와 index(after:) 의 차이">
       </div>
     </div>
   </div>
@@ -241,25 +249,78 @@
             
             <a href="/tag/Post" class="post-tags__tag">Post</a>
             
-            <a href="/tag/Xcode" class="post-tags__tag">Xcode</a>
+            <a href="/tag/Swift" class="post-tags__tag">Swift</a>
             
           </div>
           
-          <h1 class="post-title">Xcode에서 코드 일괄 변경 단축키</h1>
+          <h1 class="post-title">Collection 의 indices 와 index(after:) 의 차이</h1>
           <div class="post__meta">
             <div class="post__author">
               <a href="/about/" class="post__author-image"
                 style="background-image: url(/images/profile.jpg)" aria-label="김 찌루루's Picture"></a> <a href="/about/" class="post__author-link">김 찌루루</a>
             </div>
             <span class="post__date">
-              <time datetime="2020-11-20T01:53:55+09:00">Nov 20, 2020</time>
+              <time datetime="2020-11-22T16:53:55+09:00">Nov 22, 2020</time>
             </span>
           </div>
         </div>
 
         <div class="post__content">
-          <p>바꾸려는 곳에 커서를 두고 ctrl + cmd + e
-혹은, 커서를 두고 Editor - Edit All in Scope</p>
+          <p>Swift Collection 의 instance property 중 indices 에 대해</p>
+
+<p><img src="/images/6-1.png" alt="indices discussion" />
+<em>indices discussion</em></p>
+
+<p>indices 속성은 collection 자체에 strong reference를 가질 수 있으므로
+collection 의 indices를 돌면서 collection 을 수정하게 된다면, 
+strong reference에 의해 예상치못한 copy 가 발생할 수 있다</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">var</span> <span class="nv">myCollection</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">50</span><span class="p">]</span>
+
+<span class="c1">// 컴파일 시에 해당 collection 에 수정이 가해지는 코드가 있다고 판단되면</span>
+<span class="c1">// myCollection.indices 수행 시 따로 복사본으로 들고 있도록 한다는 뜻인가?</span>
+<span class="k">for</span> <span class="n">index</span> <span class="k">in</span> <span class="n">myCollection</span><span class="o">.</span><span class="n">indices</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+    <span class="n">myCollection</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">/=</span> <span class="mi">5</span>
+    <span class="n">myCollection</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">myCollection</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">+</span><span class="mi">100</span><span class="p">)</span> 
+    <span class="c1">// 값을 수정하거나 요소를 추가하는 등 collection 에 변경이 생기면 예상치 못한 copy 가 일어날 수 있음</span>
+<span class="p">}</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">myCollection</span><span class="p">)</span></code></pre></figure>
+
+<p>👇 실행 결과</p>
+
+<figure class="highlight"><pre><code class="language-markdown" data-lang="markdown">0
+1
+2
+3
+4
+[2, 4, 6, 8, 10, 102, 104, 106, 108, 110]</code></pre></figure>
+
+<p>따라서 의도에 맞게 쓸 수 있도록 index(after:) 속성도 제공한다</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">var</span> <span class="nv">myCollection</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">50</span><span class="p">]</span>
+<span class="k">var</span> <span class="nv">index</span> <span class="o">=</span> <span class="n">myCollection</span><span class="o">.</span><span class="n">startIndex</span>
+
+<span class="k">while</span> <span class="n">index</span> <span class="o">!=</span> <span class="n">myCollection</span><span class="o">.</span><span class="n">endIndex</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+    <span class="n">myCollection</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">/=</span> <span class="mi">5</span>
+    <span class="n">myCollection</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">myCollection</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">+</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="n">myCollection</span><span class="o">.</span><span class="nf">index</span><span class="p">(</span><span class="nv">after</span><span class="p">:</span> <span class="n">index</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">myCollection</span><span class="p">)</span></code></pre></figure>
+
+<p>👇 실행 결과</p>
+
+<figure class="highlight"><pre><code class="language-markdown" data-lang="markdown">0
+1
+2
+3
+4
+5
+6
+... 무한루프에 빠진다</code></pre></figure>
 
         </div>
 
@@ -269,24 +330,24 @@
           </div>
           <ul class="share__list list-reset">
             <li class="share__item">
-              <a class="share__link share__facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2020/11/20/01-edit-all-in-xcode-5/"
+              <a class="share__link share__facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2020/11/22/16-collection-indices-6/"
                 onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
                 title="Share on Facebook" rel="nofollow"><i class="ion ion-logo-facebook"></i></a>
             </li>
 
             <li class="share__item">
-              <a class="share__link share__twitter" href="https://twitter.com/intent/tweet?text=Xcode%EC%97%90%EC%84%9C%20%EC%BD%94%EB%93%9C%20%EC%9D%BC%EA%B4%84%20%EB%B3%80%EA%B2%BD%20%EB%8B%A8%EC%B6%95%ED%82%A4&url=http://localhost:4000/2020/11/20/01-edit-all-in-xcode-5/"
+              <a class="share__link share__twitter" href="https://twitter.com/intent/tweet?text=Collection%20%EC%9D%98%20indices%20%EC%99%80%20index(after:)%20%EC%9D%98%20%EC%B0%A8%EC%9D%B4&url=http://localhost:4000/2020/11/22/16-collection-indices-6/"
                 onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
                 title="Share on Twitter" rel="nofollow"><i class="ion ion-logo-twitter"></i></a>
             </li>
 
             <li class="share__item">
-              <a class="share__link share__linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/2020/11/20/01-edit-all-in-xcode-5/&title=Xcode%EC%97%90%EC%84%9C%20%EC%BD%94%EB%93%9C%20%EC%9D%BC%EA%B4%84%20%EB%B3%80%EA%B2%BD%20%EB%8B%A8%EC%B6%95%ED%82%A4&summary=&source=ZZIRURU"
+              <a class="share__link share__linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/2020/11/22/16-collection-indices-6/&title=Collection%20%EC%9D%98%20indices%20%EC%99%80%20index(after:)%20%EC%9D%98%20%EC%B0%A8%EC%9D%B4&summary=&source=ZZIRURU"
               onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn" rel="nofollow"><i class="ion ion-logo-linkedin"></i></a>
             </li>
 
             <li class="share__item">
-              <a class="share__link share__pinterest" href="http://pinterest.com/pin/create/button/?url=http://localhost:4000/2020/11/20/01-edit-all-in-xcode-5/&amp;media=http://localhost:4000/images/5(xcode).jpg&amp;description=Xcode%EC%97%90%EC%84%9C%20%EC%BD%94%EB%93%9C%20%EC%9D%BC%EA%B4%84%20%EB%B3%80%EA%B2%BD%20%EB%8B%A8%EC%B6%95%ED%82%A4"
+              <a class="share__link share__pinterest" href="http://pinterest.com/pin/create/button/?url=http://localhost:4000/2020/11/22/16-collection-indices-6/&amp;media=http://localhost:4000/images/6(swift).png&amp;description=Collection%20%EC%9D%98%20indices%20%EC%99%80%20index(after:)%20%EC%9D%98%20%EC%B0%A8%EC%9D%B4"
               onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Pinterest"
               rel="nofollow"><i class="ion ion-logo-pinterest"></i></a>
             </li>
@@ -295,11 +356,11 @@
 
         <div class="post__navigation">
           
-          <a class="prev" href="/2020/11/14/14-swift-error-handling-1/" style="background-image: url(/images/1.jpg)">
+          <a class="prev" href="/2020/11/20/01-edit-all-in-xcode-5-copy/" style="background-image: url(/images/5(xcode).jpg)">
             <div class="post__nav-box">
               <div class="post__nav post__nav__prev"><i class="ion ion-ios-arrow-back"></i> Previous
                 Page</div>
-              <h4 class="post__nav__title">Swift 로 에러 핸들링을 해보자</h4>
+              <h4 class="post__nav__title">Xcode에서 코드 일괄 변경 단축키</h4>
             </div>
           </a>
           
@@ -430,6 +491,10 @@
       
     
   
+    
+      
+    
+  
 </ul>
         </div>
       </div>
@@ -469,14 +534,22 @@
   <ul class="social__list list-reset">
     
     <li class="social__item">
-      <a class="social__link" href="https://instagram.com" aria-label="social icon"><i class="ion ion-logo-instagram"></i></a>
+      <a class="social__link" href="https://instagram.com/zziruruda" aria-label="social icon"><i class="ion ion-logo-instagram"></i></a>
     </li>
     
     <li class="social__item">
-      <a class="social__link" href="https://github.com" aria-label="social icon"><i class="ion ion-logo-github"></i></a>
+      <a class="social__link" href="https://www.linkedin.com/in/jihye-kim-1564181b4" aria-label="social icon"><i class="ion ion-logo-linkedin"></i></a>
     </li>
     
+    <li class="social__item">
+      <a class="social__link" href="https://github.com/jae57" aria-label="social icon"><i class="ion ion-logo-github"></i></a>
+    </li>
+    
+    <li class="social__item">
+      <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fzziruru.me&count_bg=%233D9EC8&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=%F0%9F%A4%AD+HITS%21&edge_flat=false"/></a>
+    </li>
   </ul>
+  
 </div>
 
         <div class="copyright">2020 &copy; <a href="/"><strong>ZZIRURU</strong></a>. Crafted & Designed by <a href="https://jekyllthemes.io/developers/artem-sheludko">Artem Sheludko</a>.</div>

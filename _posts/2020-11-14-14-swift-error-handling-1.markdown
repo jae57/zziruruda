@@ -4,7 +4,7 @@ title: Swift 로 에러 핸들링을 해보자
 date: 2020-11-14 14:29:55 +0900
 image: '/images/1.jpg'
 tags: Study
-featured: true
+featured: false
 ---
 
 다양한 에러 상황에서 사용자가 불편해하지 않도록  
