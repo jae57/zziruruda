@@ -1,10 +1,18 @@
 [
   
     {
+      "title"    : "Collection 의 indices 와 index(after:) 의 차이",
+      "category" : "",
+      "tags"     : "Post and Swift",
+      "url"      : "/2020/11/22/16-collection-indices-6/",
+      "date"     : "Nov 22, 2020"
+    } ,
+  
+    {
       "title"    : "Xcode에서 코드 일괄 변경 단축키",
       "category" : "",
       "tags"     : "Post and Xcode",
-      "url"      : "/2020/11/20/01-edit-all-in-xcode-5/",
+      "url"      : "/2020/11/20/01-edit-all-in-xcode-5-copy/",
       "date"     : "Nov 20, 2020"
     } ,
   
