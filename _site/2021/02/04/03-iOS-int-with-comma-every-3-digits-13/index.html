@@ -6,10 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Page not found</title>
+  <title>숫자 세자리 수 마다 콤마 넣어서 가격 표시하기</title>
   <meta name='description' content=''>
 
-  <link rel="canonical" href="http://localhost:4000/404.html">
+  <link rel="canonical" href="http://localhost:4000/2021/02/04/03-iOS-int-with-comma-every-3-digits-13/">
   <link rel="alternate" type="application/rss+xml" title="ZZIRURU" href="/feed.xml">
 
   <!-- Fonts -->
@@ -278,7 +278,7 @@
   <div class="row">
     <div class="col col-12">
       <div class="image-box">
-        <img class="page-image" src="/images/32.jpg" alt="Page not found">
+        <img class="post-image" src="/images/11(iOS).png" alt="숫자 세자리 수 마다 콤마 넣어서 가격 표시하기">
       </div>
     </div>
   </div>
@@ -287,26 +287,157 @@
 
 <div class="container">
   <div class="row">
-    <div class="col col-8 push-2 col-d-10 col-m-12 push-d-1 push-m-0">
-      <!-- begin page -->
-      <article class="page animate">
-        <div class="page-head">
-          <h1 class="page-title">Page not found</h1>
+    <div class="col col-8 col-d-10 push-2 push-d-1 col-t-12 push-t-0">
+      <!-- begin post -->
+      <article class="post animate">
+
+        <div class="post-head">
+          
+          <div class="post-tags">
+            
+            <a href="/tag/Post" class="post-tags__tag">Post</a>
+            
+            <a href="/tag/iOS" class="post-tags__tag">iOS</a>
+            
+            <a href="/tag/Int" class="post-tags__tag">Int</a>
+            
+            <a href="/tag/Extension" class="post-tags__tag">Extension</a>
+            
+          </div>
+          
+          <h1 class="post-title">숫자 세자리 수 마다 콤마 넣어서 가격 표시하기</h1>
+          <div class="post__meta">
+            <div class="post__author">
+              <a href="/about/" class="post__author-image"
+                style="background-image: url(/images/profile.jpg)" aria-label="김 찌루루's Picture"></a> <a href="/about/" class="post__author-link">김 찌루루</a>
+            </div>
+            <span class="post__date">
+              <time datetime="2021-02-04T03:27:55+09:00">Feb 04, 2021</time>
+            </span>
+          </div>
         </div>
-        <div class="page__content">
-          <div class="container">
-  <div class="row">
-    <div class="col col-12" style="text-align: center">
-      <h2>404</h2>
-      <p>The requested page could not be found.</p>
-      <p><a href="/" class="button button--middle"  style="text-decoration: none"><i class="ion ion-md-arrow-back"></i> Back to the blog</a></p>
-    </div>
-  </div>
-</div>
+
+        <div class="post__content">
+          <p>해결법1</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift">   <span class="kd">extension</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">withCommas</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">numberFormatter</span><span class="p">:</span> <span class="kt">NumberFormatter</span> <span class="o">=</span> <span class="kt">NumberFormatter</span><span class="p">()</span>
+        <span class="n">numberFormatter</span><span class="o">.</span><span class="n">numberStyle</span> <span class="o">=</span> <span class="o">.</span><span class="n">decimal</span>
+        <span class="k">return</span> <span class="n">numberFormatter</span><span class="o">.</span><span class="nf">string</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="k">self</span><span class="p">))</span><span class="o">!</span>
+    <span class="p">}</span>
+  <span class="p">}</span></code></pre></figure>
+
+<p>해결법2</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">extension</span> <span class="kt">NumberFormatter</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="k">let</span> <span class="nv">withComma</span><span class="p">:</span> <span class="kt">NumberFormatter</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">formatter</span> <span class="o">=</span> <span class="kt">NumberFormatter</span><span class="p">()</span>
+        <span class="n">formatter</span><span class="o">.</span><span class="n">numberStyle</span> <span class="o">=</span> <span class="o">.</span><span class="n">decimal</span>
+        <span class="k">return</span> <span class="n">formatter</span>
+    <span class="p">}()</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>해결법2 의 사용 례</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">private</span> <span class="kd">func</span> <span class="nf">updateScore</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">scoreString</span> <span class="o">=</span> <span class="kt">NumberFormatter</span><span class="o">.</span><span class="n">withComma</span><span class="o">.</span><span class="nf">string</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="n">score</span><span class="p">))</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span>
+    <span class="p">}</span>
+    <span class="n">scoreLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"</span><span class="se">\(</span><span class="n">scoreString</span><span class="se">)</span><span class="s">점"</span>
+<span class="p">}</span></code></pre></figure>
 
         </div>
+
+        <div class="post__share">
+          <div class="share__head">
+            <div class="share__title">Share this article</div>
+          </div>
+          <ul class="share__list list-reset">
+            <li class="share__item">
+              <a class="share__link share__facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2021/02/04/03-iOS-int-with-comma-every-3-digits-13/"
+                onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+                title="Share on Facebook" rel="nofollow"><i class="ion ion-logo-facebook"></i></a>
+            </li>
+
+            <li class="share__item">
+              <a class="share__link share__twitter" href="https://twitter.com/intent/tweet?text=%EC%88%AB%EC%9E%90%20%EC%84%B8%EC%9E%90%EB%A6%AC%20%EC%88%98%20%EB%A7%88%EB%8B%A4%20%EC%BD%A4%EB%A7%88%20%EB%84%A3%EC%96%B4%EC%84%9C%20%EA%B0%80%EA%B2%A9%20%ED%91%9C%EC%8B%9C%ED%95%98%EA%B8%B0&url=http://localhost:4000/2021/02/04/03-iOS-int-with-comma-every-3-digits-13/"
+                onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+                title="Share on Twitter" rel="nofollow"><i class="ion ion-logo-twitter"></i></a>
+            </li>
+
+            <li class="share__item">
+              <a class="share__link share__linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/2021/02/04/03-iOS-int-with-comma-every-3-digits-13/&title=%EC%88%AB%EC%9E%90%20%EC%84%B8%EC%9E%90%EB%A6%AC%20%EC%88%98%20%EB%A7%88%EB%8B%A4%20%EC%BD%A4%EB%A7%88%20%EB%84%A3%EC%96%B4%EC%84%9C%20%EA%B0%80%EA%B2%A9%20%ED%91%9C%EC%8B%9C%ED%95%98%EA%B8%B0&summary=&source=ZZIRURU"
+              onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn" rel="nofollow"><i class="ion ion-logo-linkedin"></i></a>
+            </li>
+
+            <li class="share__item">
+              <a class="share__link share__pinterest" href="http://pinterest.com/pin/create/button/?url=http://localhost:4000/2021/02/04/03-iOS-int-with-comma-every-3-digits-13/&amp;media=http://localhost:4000/images/11(iOS).png&amp;description=%EC%88%AB%EC%9E%90%20%EC%84%B8%EC%9E%90%EB%A6%AC%20%EC%88%98%20%EB%A7%88%EB%8B%A4%20%EC%BD%A4%EB%A7%88%20%EB%84%A3%EC%96%B4%EC%84%9C%20%EA%B0%80%EA%B2%A9%20%ED%91%9C%EC%8B%9C%ED%95%98%EA%B8%B0"
+              onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Pinterest"
+              rel="nofollow"><i class="ion ion-logo-pinterest"></i></a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="post__navigation">
+          
+          <a class="prev" href="/2021/01/15/18-iOS-string-strikethrough-style-12-copy/" style="background-image: url(/images/11(iOS).png)">
+            <div class="post__nav-box">
+              <div class="post__nav post__nav__prev"><i class="ion ion-ios-arrow-back"></i> Previous
+                Page</div>
+              <h4 class="post__nav__title">UILabel 에 취소선 스타일 적용하기</h4>
+            </div>
+          </a>
+          
+          
+          <a class="next" href="/2021/02/12/02-SplitViewController-16/" style="background-image: url(/images/11(iOS).png)">
+            <div class="post__nav-box">
+              <div class="post__nav post__nav__next">Next Page <i class="ion ion-ios-arrow-forward"></i></div>
+              <h4 class="post__nav__title">SplitViewController 알아보기</h4>
+            </div>
+          </a>
+          
+        </div>
+
+         <!-- begin comments -->
+<div id="disqus_thread" class="comments__article">
+  <div id="disqus_empty"></div>
+</div>
+
+<script>
+  function load_disqus() {
+    var disqus_shortname = 'mr-brown',
+      is_disqus_empty = document.getElementById('disqus_empty'),
+      disqus_target = document.getElementById('disqus_thread'),
+      disqus_embed = document.createElement('script'),
+      disqus_hook = (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]);
+
+    if (disqus_target && is_disqus_empty) {
+      disqus_embed.type = 'text/javascript';
+      disqus_embed.async = true;
+      disqus_embed.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      disqus_hook.appendChild(disqus_embed);
+      is_disqus_empty.remove();
+    }
+  }
+
+  window.addEventListener('scroll', function (e) {
+    var currentScroll = document.scrollingElement.scrollTop;
+    var disqus_target = document.getElementById('disqus_thread');
+
+    if (disqus_target && (currentScroll > disqus_target.getBoundingClientRect().top - 150)) {
+      load_disqus('disqus_shortname');
+    }
+  }, false);
+
+</script>
+<noscript>Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<!-- end comments --> 
+
       </article>
-      <!-- end page -->
+      <!-- end post -->
     </div>
   </div>
 </div>

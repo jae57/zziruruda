@@ -6,10 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Page not found</title>
+  <title>SplitViewController 알아보기</title>
   <meta name='description' content=''>
 
-  <link rel="canonical" href="http://localhost:4000/404.html">
+  <link rel="canonical" href="http://localhost:4000/2021/02/12/02-SplitViewController-16/">
   <link rel="alternate" type="application/rss+xml" title="ZZIRURU" href="/feed.xml">
 
   <!-- Fonts -->
@@ -278,7 +278,7 @@
   <div class="row">
     <div class="col col-12">
       <div class="image-box">
-        <img class="page-image" src="/images/32.jpg" alt="Page not found">
+        <img class="post-image" src="/images/11(iOS).png" alt="SplitViewController 알아보기">
       </div>
     </div>
   </div>
@@ -287,26 +287,146 @@
 
 <div class="container">
   <div class="row">
-    <div class="col col-8 push-2 col-d-10 col-m-12 push-d-1 push-m-0">
-      <!-- begin page -->
-      <article class="page animate">
-        <div class="page-head">
-          <h1 class="page-title">Page not found</h1>
+    <div class="col col-8 col-d-10 push-2 push-d-1 col-t-12 push-t-0">
+      <!-- begin post -->
+      <article class="post animate">
+
+        <div class="post-head">
+          
+          <div class="post-tags">
+            
+            <a href="/tag/Study" class="post-tags__tag">Study</a>
+            
+          </div>
+          
+          <h1 class="post-title">SplitViewController 알아보기</h1>
+          <div class="post__meta">
+            <div class="post__author">
+              <a href="/about/" class="post__author-image"
+                style="background-image: url(/images/profile.jpg)" aria-label="김 찌루루's Picture"></a> <a href="/about/" class="post__author-link">김 찌루루</a>
+            </div>
+            <span class="post__date">
+              <time datetime="2021-02-12T02:12:35+09:00">Feb 12, 2021</time>
+            </span>
+          </div>
         </div>
-        <div class="page__content">
-          <div class="container">
-  <div class="row">
-    <div class="col col-12" style="text-align: center">
-      <h2>404</h2>
-      <p>The requested page could not be found.</p>
-      <p><a href="/" class="button button--middle"  style="text-decoration: none"><i class="ion ion-md-arrow-back"></i> Back to the blog</a></p>
-    </div>
-  </div>
-</div>
+
+        <div class="post__content">
+          <h3 id="uisplitviewcontroller">UISplitViewController</h3>
+
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0d5331e8-38ff-4dbe-8355-ae32818ff871/Untitled.png" alt="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0d5331e8-38ff-4dbe-8355-ae32818ff871/Untitled.png" /></p>
+
+<p>공식문서 📑</p>
+
+<p><a href="https://developer.apple.com/documentation/uikit/uisplitviewcontroller">https://developer.apple.com/documentation/uikit/uisplitviewcontroller</a></p>
+
+<p>Split View Controller 는 navigation stack에 push 할 수 없다. 다른 view controller 의 child로 install 될 수는 있지만 이것 역시 대부분의 경우 추천하지 않음.</p>
+
+<ul>
+  <li>iOS 14 이후로 column-style 레이아웃을 지원한다. iOS 14 이전에는 Double Column 만 지원했다.
+init(stye: .doubleColumn) : 두 개의 child view controllers 를 관리하고, primary 와 secondary columns 에 위치한다.
+init(style: .tripleColumn) : 세 개의 child view controllers 를 관리하고, primary, supplementary 그리고 secondary columns 에 위치한다.</li>
+</ul>
+
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/94389b30-36aa-4a62-8d26-28c53a5c0e54/Untitled.png" alt="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/94389b30-36aa-4a62-8d26-28c53a5c0e54/Untitled.png" /></p>
+
+<p>기본으로 navi감싸져있고 접근에 관해서 정리왜 안해써!</p>
+
+<p>스토리보드 같은데 보면 restore identifier 같은게 있는데 이게 다 복구 시에 쓰이는 id 라고 봐도 될지?</p>
+
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5592c639-407f-45dd-b1c4-0c24b933a748/Untitled.png" alt="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5592c639-407f-45dd-b1c4-0c24b933a748/Untitled.png" /></p>
 
         </div>
+
+        <div class="post__share">
+          <div class="share__head">
+            <div class="share__title">Share this article</div>
+          </div>
+          <ul class="share__list list-reset">
+            <li class="share__item">
+              <a class="share__link share__facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2021/02/12/02-SplitViewController-16/"
+                onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+                title="Share on Facebook" rel="nofollow"><i class="ion ion-logo-facebook"></i></a>
+            </li>
+
+            <li class="share__item">
+              <a class="share__link share__twitter" href="https://twitter.com/intent/tweet?text=SplitViewController%20%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0&url=http://localhost:4000/2021/02/12/02-SplitViewController-16/"
+                onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+                title="Share on Twitter" rel="nofollow"><i class="ion ion-logo-twitter"></i></a>
+            </li>
+
+            <li class="share__item">
+              <a class="share__link share__linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/2021/02/12/02-SplitViewController-16/&title=SplitViewController%20%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0&summary=&source=ZZIRURU"
+              onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn" rel="nofollow"><i class="ion ion-logo-linkedin"></i></a>
+            </li>
+
+            <li class="share__item">
+              <a class="share__link share__pinterest" href="http://pinterest.com/pin/create/button/?url=http://localhost:4000/2021/02/12/02-SplitViewController-16/&amp;media=http://localhost:4000/images/11(iOS).png&amp;description=SplitViewController%20%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0"
+              onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Pinterest"
+              rel="nofollow"><i class="ion ion-logo-pinterest"></i></a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="post__navigation">
+          
+          <a class="prev" href="/2021/02/04/03-iOS-int-with-comma-every-3-digits-13/" style="background-image: url(/images/11(iOS).png)">
+            <div class="post__nav-box">
+              <div class="post__nav post__nav__prev"><i class="ion ion-ios-arrow-back"></i> Previous
+                Page</div>
+              <h4 class="post__nav__title">숫자 세자리 수 마다 콤마 넣어서 가격 표시하기</h4>
+            </div>
+          </a>
+          
+          
+          <a class="next" href="/2021/03/15/01-framework-15-copy/" style="background-image: url(/images/4.jpg)">
+            <div class="post__nav-box">
+              <div class="post__nav post__nav__next">Next Page <i class="ion ion-ios-arrow-forward"></i></div>
+              <h4 class="post__nav__title">Framework</h4>
+            </div>
+          </a>
+          
+        </div>
+
+         <!-- begin comments -->
+<div id="disqus_thread" class="comments__article">
+  <div id="disqus_empty"></div>
+</div>
+
+<script>
+  function load_disqus() {
+    var disqus_shortname = 'mr-brown',
+      is_disqus_empty = document.getElementById('disqus_empty'),
+      disqus_target = document.getElementById('disqus_thread'),
+      disqus_embed = document.createElement('script'),
+      disqus_hook = (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]);
+
+    if (disqus_target && is_disqus_empty) {
+      disqus_embed.type = 'text/javascript';
+      disqus_embed.async = true;
+      disqus_embed.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      disqus_hook.appendChild(disqus_embed);
+      is_disqus_empty.remove();
+    }
+  }
+
+  window.addEventListener('scroll', function (e) {
+    var currentScroll = document.scrollingElement.scrollTop;
+    var disqus_target = document.getElementById('disqus_thread');
+
+    if (disqus_target && (currentScroll > disqus_target.getBoundingClientRect().top - 150)) {
+      load_disqus('disqus_shortname');
+    }
+  }, false);
+
+</script>
+<noscript>Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<!-- end comments --> 
+
       </article>
-      <!-- end page -->
+      <!-- end post -->
     </div>
   </div>
 </div>

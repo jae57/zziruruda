@@ -6,10 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Page not found</title>
+  <title>UILabel 에 취소선 스타일 적용하기</title>
   <meta name='description' content=''>
 
-  <link rel="canonical" href="http://localhost:4000/404.html">
+  <link rel="canonical" href="http://localhost:4000/2021/01/15/18-iOS-string-strikethrough-style-12-copy/">
   <link rel="alternate" type="application/rss+xml" title="ZZIRURU" href="/feed.xml">
 
   <!-- Fonts -->
@@ -278,7 +278,7 @@
   <div class="row">
     <div class="col col-12">
       <div class="image-box">
-        <img class="page-image" src="/images/32.jpg" alt="Page not found">
+        <img class="post-image" src="/images/11(iOS).png" alt="UILabel 에 취소선 스타일 적용하기">
       </div>
     </div>
   </div>
@@ -287,26 +287,143 @@
 
 <div class="container">
   <div class="row">
-    <div class="col col-8 push-2 col-d-10 col-m-12 push-d-1 push-m-0">
-      <!-- begin page -->
-      <article class="page animate">
-        <div class="page-head">
-          <h1 class="page-title">Page not found</h1>
+    <div class="col col-8 col-d-10 push-2 push-d-1 col-t-12 push-t-0">
+      <!-- begin post -->
+      <article class="post animate">
+
+        <div class="post-head">
+          
+          <div class="post-tags">
+            
+            <a href="/tag/Post" class="post-tags__tag">Post</a>
+            
+            <a href="/tag/iOS" class="post-tags__tag">iOS</a>
+            
+            <a href="/tag/Label" class="post-tags__tag">Label</a>
+            
+            <a href="/tag/Style" class="post-tags__tag">Style</a>
+            
+          </div>
+          
+          <h1 class="post-title">UILabel 에 취소선 스타일 적용하기</h1>
+          <div class="post__meta">
+            <div class="post__author">
+              <a href="/about/" class="post__author-image"
+                style="background-image: url(/images/profile.jpg)" aria-label="김 찌루루's Picture"></a> <a href="/about/" class="post__author-link">김 찌루루</a>
+            </div>
+            <span class="post__date">
+              <time datetime="2021-01-15T18:29:55+09:00">Jan 15, 2021</time>
+            </span>
+          </div>
         </div>
-        <div class="page__content">
-          <div class="container">
-  <div class="row">
-    <div class="col col-12" style="text-align: center">
-      <h2>404</h2>
-      <p>The requested page could not be found.</p>
-      <p><a href="/" class="button button--middle"  style="text-decoration: none"><i class="ion ion-md-arrow-back"></i> Back to the blog</a></p>
-    </div>
-  </div>
-</div>
+
+        <div class="post__content">
+          <p align="center">
+  <img src="/images/12-1.png" />
+</p>
+
+<blockquote>
+  <p><strong>취소선(strikeout, strikethrough)</strong>은 글자 중앙에 수평선이 있는 타이포그래피적인 표현
+주로 실수했거나 제거할 문자를 표시하기 위해 사용된다. - 위키백과</p>
+</blockquote>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift">   <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">taskLabel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span>
+
+   <span class="n">taskLabel</span><span class="o">.</span><span class="n">attributedText</span> <span class="o">=</span> <span class="kt">NSAttributedString</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"취소선이 적용된 문자열"</span><span class="p">,</span>
+        <span class="nv">attributes</span><span class="p">:</span> <span class="p">[</span><span class="o">.</span><span class="nv">strikethroughStyle</span><span class="p">:</span> <span class="mi">1</span><span class="p">])</span></code></pre></figure>
+
 
         </div>
+
+        <div class="post__share">
+          <div class="share__head">
+            <div class="share__title">Share this article</div>
+          </div>
+          <ul class="share__list list-reset">
+            <li class="share__item">
+              <a class="share__link share__facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2021/01/15/18-iOS-string-strikethrough-style-12-copy/"
+                onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+                title="Share on Facebook" rel="nofollow"><i class="ion ion-logo-facebook"></i></a>
+            </li>
+
+            <li class="share__item">
+              <a class="share__link share__twitter" href="https://twitter.com/intent/tweet?text=UILabel%20%EC%97%90%20%EC%B7%A8%EC%86%8C%EC%84%A0%20%EC%8A%A4%ED%83%80%EC%9D%BC%20%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0&url=http://localhost:4000/2021/01/15/18-iOS-string-strikethrough-style-12-copy/"
+                onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+                title="Share on Twitter" rel="nofollow"><i class="ion ion-logo-twitter"></i></a>
+            </li>
+
+            <li class="share__item">
+              <a class="share__link share__linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/2021/01/15/18-iOS-string-strikethrough-style-12-copy/&title=UILabel%20%EC%97%90%20%EC%B7%A8%EC%86%8C%EC%84%A0%20%EC%8A%A4%ED%83%80%EC%9D%BC%20%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0&summary=&source=ZZIRURU"
+              onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn" rel="nofollow"><i class="ion ion-logo-linkedin"></i></a>
+            </li>
+
+            <li class="share__item">
+              <a class="share__link share__pinterest" href="http://pinterest.com/pin/create/button/?url=http://localhost:4000/2021/01/15/18-iOS-string-strikethrough-style-12-copy/&amp;media=http://localhost:4000/images/11(iOS).png&amp;description=UILabel%20%EC%97%90%20%EC%B7%A8%EC%86%8C%EC%84%A0%20%EC%8A%A4%ED%83%80%EC%9D%BC%20%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0"
+              onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Pinterest"
+              rel="nofollow"><i class="ion ion-logo-pinterest"></i></a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="post__navigation">
+          
+          <a class="prev" href="/2021/01/12/12-swift-defer-8/" style="background-image: url(/images/6(swift).png)">
+            <div class="post__nav-box">
+              <div class="post__nav post__nav__prev"><i class="ion ion-ios-arrow-back"></i> Previous
+                Page</div>
+              <h4 class="post__nav__title">defer 이 뭔가요?</h4>
+            </div>
+          </a>
+          
+          
+          <a class="next" href="/2021/02/04/03-iOS-int-with-comma-every-3-digits-13/" style="background-image: url(/images/11(iOS).png)">
+            <div class="post__nav-box">
+              <div class="post__nav post__nav__next">Next Page <i class="ion ion-ios-arrow-forward"></i></div>
+              <h4 class="post__nav__title">숫자 세자리 수 마다 콤마 넣어서 가격 표시하기</h4>
+            </div>
+          </a>
+          
+        </div>
+
+         <!-- begin comments -->
+<div id="disqus_thread" class="comments__article">
+  <div id="disqus_empty"></div>
+</div>
+
+<script>
+  function load_disqus() {
+    var disqus_shortname = 'mr-brown',
+      is_disqus_empty = document.getElementById('disqus_empty'),
+      disqus_target = document.getElementById('disqus_thread'),
+      disqus_embed = document.createElement('script'),
+      disqus_hook = (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]);
+
+    if (disqus_target && is_disqus_empty) {
+      disqus_embed.type = 'text/javascript';
+      disqus_embed.async = true;
+      disqus_embed.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      disqus_hook.appendChild(disqus_embed);
+      is_disqus_empty.remove();
+    }
+  }
+
+  window.addEventListener('scroll', function (e) {
+    var currentScroll = document.scrollingElement.scrollTop;
+    var disqus_target = document.getElementById('disqus_thread');
+
+    if (disqus_target && (currentScroll > disqus_target.getBoundingClientRect().top - 150)) {
+      load_disqus('disqus_shortname');
+    }
+  }, false);
+
+</script>
+<noscript>Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<!-- end comments --> 
+
       </article>
-      <!-- end page -->
+      <!-- end post -->
     </div>
   </div>
 </div>

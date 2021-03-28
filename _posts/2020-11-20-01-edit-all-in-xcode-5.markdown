@@ -2,7 +2,7 @@
 layout: post
 title: Xcode에서 코드 일괄 변경 단축키
 date: 2020-11-20 01:53:55 +0900
-image: '/images/5(xcode).jpg'
+image: "/images/5(xcode).jpg"
 tags: Post Xcode
 featured: false
 ---

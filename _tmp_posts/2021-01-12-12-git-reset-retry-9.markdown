@@ -1,0 +1,28 @@
+---
+layout: post
+title: retry, reset 의 차이가 무엇인가요?
+date: 2021-01-12 12:29:55 +0900
+image: "/images/9(git).jpeg"
+tags: Post Git
+featured: false
+---
+
+[[Swift 공식문서] defer statement](https://docs.swift.org/swift-book/ReferenceManual/Statements.html#ID532)
+
+defer 내부의 코드는 program control 이 어떻게 변하든 상관없이 무조건 실행된다.
+따라서 에러가 발생하더라도 defer 내부의 코드는 동작하고 끝난다.
+
+만약 같은 scope 내에 defer 이 여러개 있다면 실행되는 순서는 선언된 순서의 반대이다.
+
+{% highlight swift %}
+   func f() {
+      defer { print("First defer") }
+      defer { print("Second defer") }
+      print("End of function")
+   }
+   f()
+
+   // Prints "End of function"
+   // Prints "Second defer"
+   // Prints "First defer"
+{% endhighlight %}
