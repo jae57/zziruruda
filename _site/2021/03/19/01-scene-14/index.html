@@ -6,10 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Page not found</title>
+  <title>Scene에 대해</title>
   <meta name='description' content=''>
 
-  <link rel="canonical" href="http://localhost:4000/404.html">
+  <link rel="canonical" href="http://localhost:4000/2021/03/19/01-scene-14/">
   <link rel="alternate" type="application/rss+xml" title="ZZIRURU" href="/feed.xml">
 
   <!-- Fonts -->
@@ -278,7 +278,7 @@
   <div class="row">
     <div class="col col-12">
       <div class="image-box">
-        <img class="page-image" src="/images/32.jpg" alt="Page not found">
+        <img class="post-image" src="/images/11(iOS).png" alt="Scene에 대해">
       </div>
     </div>
   </div>
@@ -287,26 +287,235 @@
 
 <div class="container">
   <div class="row">
-    <div class="col col-8 push-2 col-d-10 col-m-12 push-d-1 push-m-0">
-      <!-- begin page -->
-      <article class="page animate">
-        <div class="page-head">
-          <h1 class="page-title">Page not found</h1>
+    <div class="col col-8 col-d-10 push-2 push-d-1 col-t-12 push-t-0">
+      <!-- begin post -->
+      <article class="post animate">
+
+        <div class="post-head">
+          
+          <div class="post-tags">
+            
+            <a href="/tag/Study" class="post-tags__tag">Study</a>
+            
+          </div>
+          
+          <h1 class="post-title">Scene에 대해</h1>
+          <div class="post__meta">
+            <div class="post__author">
+              <a href="/about/" class="post__author-image"
+                style="background-image: url(/images/profile.jpg)" aria-label="김 찌루루's Picture"></a> <a href="/about/" class="post__author-link">김 찌루루</a>
+            </div>
+            <span class="post__date">
+              <time datetime="2021-03-19T01:12:35+09:00">Mar 19, 2021</time>
+            </span>
+          </div>
         </div>
-        <div class="page__content">
-          <div class="container">
-  <div class="row">
-    <div class="col col-12" style="text-align: center">
-      <h2>404</h2>
-      <p>The requested page could not be found.</p>
-      <p><a href="/" class="button button--middle"  style="text-decoration: none"><i class="ion ion-md-arrow-back"></i> Back to the blog</a></p>
-    </div>
-  </div>
-</div>
+
+        <div class="post__content">
+          <p>결론 먼저 말하면,</p>
+
+<h2 id="scene-은-멀티윈도우-환경을-지원하기-위해-나왔고">Scene 은 멀티윈도우 환경을 지원하기 위해 나왔고,</h2>
+<p>이를 위해 App Delegate 에서 Scene Delegate 가 분리되어 나오는 구조적 변화가 일어났다.</p>
+
+<ul>
+  <li>WWDC</li>
+</ul>
+
+<p>덕분에</p>
+
+<p>하나의 process 에 하나의 UI(화면)만 가능했던 것이</p>
+
+<p>하나의 process 에 여러개의 UI(화면)가 가능해졌다.</p>
+
+<p>애초에 왜 하나의 App 에는 하나의 Window 였나?</p>
+
+<p><a href="https://www.notion.so/Framework-ed74499753004e27877db8489a8164f2">Framework</a></p>
+
+<h3 id="scene">Scene</h3>
+
+<p>WWDC 🍿</p>
+
+<p>2018 Behind the Scenes of the Xcode Build Process ( 이 Scene 이 그 Scene 인진 모르겠음.. )</p>
+
+<ul>
+  <li>iOS13 부터 지원</li>
+</ul>
+
+<p>Scene, View, Window 이들을 잘 구분할 수 있어?</p>
+
+<p>View 와 Window 에 관해서는 이전의 View Programming Guide 를 보면 알 수 있다.</p>
+
+<h3 id="about-windows-and-views">About Windows and Views</h3>
+
+<p>공식문서 📑</p>
+
+<p><a href="https://developer.apple.com/library/archive/documentation/WindowsViews/Conceptual/ViewPG_iPhoneOS/Introduction/Introduction.html">https://developer.apple.com/library/archive/documentation/WindowsViews/Conceptual/ViewPG_iPhoneOS/Introduction/Introduction.html</a></p>
+
+<h3 id="multitasking-과-multi-windows-는-다른-개념">Multitasking 과 Multi windows 는 다른 개념!</h3>
+
+<p>Apple 의 HIG문서에 보면 Multitasking 과 Multiple Windows 가 있다.</p>
+
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a0427f77-8029-4491-a2e9-f026538626e8/Untitled.png" alt="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a0427f77-8029-4491-a2e9-f026538626e8/Untitled.png" /></p>
+
+<h3 id="ipad-의-multiple-windows">iPad 의 Multiple Windows</h3>
+
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/37d16848-ee58-442e-86a4-45f2415eab21/Untitled.png" alt="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/37d16848-ee58-442e-86a4-45f2415eab21/Untitled.png" /></p>
+
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ee06c8e1-c405-4b33-a0f3-8b6e47c09f7b/Untitled.png" alt="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ee06c8e1-c405-4b33-a0f3-8b6e47c09f7b/Untitled.png" /></p>
+
+<p>공식문서 📑</p>
+
+<p><a href="https://developer.apple.com/design/human-interface-guidelines/ios/system-capabilities/multiple-windows/">https://developer.apple.com/design/human-interface-guidelines/ios/system-capabilities/multiple-windows/</a></p>
+
+<p>WWDC 🍿</p>
+
+<p>2019 Introducing Multiple Windows on iPad
+2019 Targeting Content with Multiple Windows</p>
+
+<ul>
+  <li>하나의 app 을 동시에 여러 화면을 띄워서 사용할 수 있다. ( 여러 앱을 동시에 띄워서 하는 건 좀 더 multi-tasking에 가까움 )</li>
+  <li>프로세스 자체는 하나가 실행되었고, 이를 두 개의 화면에서 각각 보이도록 한 것! 
+앱은 하나가 실행되었으나 scene 이 두 개다.</li>
+  <li>iPhone 에선 지원 안함.</li>
+  <li>iOS 13 이후 부터 지원. iPad에서..!</li>
+</ul>
+
+<p>iPad app 의 Mac 버전에서 multiple windows를 지원하고 싶다면, iPad 에서도 지원해야함.</p>
+
+<p>Mutitasking</p>
+
+<p>iPad 에서는 Slide Over, Split View, PiP  를 통해 mutitasking 이 가능하다.</p>
+
+<h3 id="slide-over">Slide Over</h3>
+
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a915fb28-094d-42c3-9409-830b4523d95e/Untitled.png" alt="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a915fb28-094d-42c3-9409-830b4523d95e/Untitled.png" /></p>
+
+<h3 id="split-view">Split View</h3>
+
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/97415b7a-c6fb-4c25-989d-bf03e59ef09f/Untitled.png" alt="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/97415b7a-c6fb-4c25-989d-bf03e59ef09f/Untitled.png" /></p>
+
+<ul>
+  <li>화면을 둘로 쪼개서 나란히 놓고 사용할 수 있다.</li>
+</ul>
+
+<h3 id="pip--picture-in-picture-">PiP ( Picture in Picture )</h3>
+
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4bec8e5c-b017-40f6-81cf-23e977afd2e3/Untitled.png" alt="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4bec8e5c-b017-40f6-81cf-23e977afd2e3/Untitled.png" /></p>
+
+<ul>
+  <li>AVKit 안에 있다.</li>
+  <li>다른 작업을 하면서 ‘동영상’ 을 보고자 할 때 쓴다.</li>
+  <li>iPhone, iPad 모두 지원함. iPad 에서는 iOS13 부터 지원했고, iPhone 은 iOS 14 부터 가능.</li>
+  <li>OS에서 지원해주면서 가능하게 된 기능이지 Scene 이 지원됨으로써 가능해진 것은 아님.</li>
+</ul>
+
+<h3 id="split-views">Split Views</h3>
+
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/42de8d63-9faf-4c17-9ab6-0fccaab5db1a/Untitled.png" alt="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/42de8d63-9faf-4c17-9ab6-0fccaab5db1a/Untitled.png" /></p>
+
+<p>공식문서 📑</p>
+
+<p><a href="https://developer.apple.com/design/human-interface-guidelines/ios/views/split-views/">https://developer.apple.com/design/human-interface-guidelines/ios/views/split-views/</a></p>
+
+<ul>
+  <li>주로 sidebar 기반 인터페이스를 만들고 싶을 때 사용한다.</li>
+  <li>2~3개의 컬럼을 구성하는 인터페이스로 구성된다.</li>
+  <li>왼쪽부터 순서대로 primary column, optional supplementary column, secondary content pane 라는 명칭으로 부른다.</li>
+  <li>primary column에서의 변화가 optional supplementary column 에 변화를 주고, 이것이 content 자체에 까지 영향을 준다.</li>
+  <li>앱이 하나 실행되었고, 한 화면(scene) 내에서 여러 컬럼을 구성할 뿐이다.</li>
+  <li>Views 에 카테고리 되어있는 내용이다. Multitasking 에서의 Split View 와 다르다!</li>
+</ul>
+
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e7d34abb-a4dc-4178-8f6d-46ff42bb20b6/Untitled.png" alt="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e7d34abb-a4dc-4178-8f6d-46ff42bb20b6/Untitled.png" /></p>
+
+<p><del>Car Play 는 Scene 과 관련된 것인지? 일단은 없다. 그냥 카플레이 전용 모드가 있어서 그에 맞는 UI 에 맞게 보여지는 것 뿐.. ?</del></p>
+
+<p>WWDC 2019 에 Advances in CarPlay Systems 보면 약간 split view (multitasking에서의) 느낌이 나긴함</p>
 
         </div>
+
+        <div class="post__share">
+          <div class="share__head">
+            <div class="share__title">Share this article</div>
+          </div>
+          <ul class="share__list list-reset">
+            <li class="share__item">
+              <a class="share__link share__facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2021/03/19/01-scene-14/"
+                onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+                title="Share on Facebook" rel="nofollow"><i class="ion ion-logo-facebook"></i></a>
+            </li>
+
+            <li class="share__item">
+              <a class="share__link share__twitter" href="https://twitter.com/intent/tweet?text=Scene%EC%97%90%20%EB%8C%80%ED%95%B4&url=http://localhost:4000/2021/03/19/01-scene-14/"
+                onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+                title="Share on Twitter" rel="nofollow"><i class="ion ion-logo-twitter"></i></a>
+            </li>
+
+            <li class="share__item">
+              <a class="share__link share__linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/2021/03/19/01-scene-14/&title=Scene%EC%97%90%20%EB%8C%80%ED%95%B4&summary=&source=ZZIRURU"
+              onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn" rel="nofollow"><i class="ion ion-logo-linkedin"></i></a>
+            </li>
+
+            <li class="share__item">
+              <a class="share__link share__pinterest" href="http://pinterest.com/pin/create/button/?url=http://localhost:4000/2021/03/19/01-scene-14/&amp;media=http://localhost:4000/images/11(iOS).png&amp;description=Scene%EC%97%90%20%EB%8C%80%ED%95%B4"
+              onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Pinterest"
+              rel="nofollow"><i class="ion ion-logo-pinterest"></i></a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="post__navigation">
+          
+          <a class="prev" href="/2021/03/15/01-framework-15-copy/" style="background-image: url(/images/4.jpg)">
+            <div class="post__nav-box">
+              <div class="post__nav post__nav__prev"><i class="ion ion-ios-arrow-back"></i> Previous
+                Page</div>
+              <h4 class="post__nav__title">Framework</h4>
+            </div>
+          </a>
+          
+          
+        </div>
+
+         <!-- begin comments -->
+<div id="disqus_thread" class="comments__article">
+  <div id="disqus_empty"></div>
+</div>
+
+<script>
+  function load_disqus() {
+    var disqus_shortname = 'mr-brown',
+      is_disqus_empty = document.getElementById('disqus_empty'),
+      disqus_target = document.getElementById('disqus_thread'),
+      disqus_embed = document.createElement('script'),
+      disqus_hook = (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]);
+
+    if (disqus_target && is_disqus_empty) {
+      disqus_embed.type = 'text/javascript';
+      disqus_embed.async = true;
+      disqus_embed.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      disqus_hook.appendChild(disqus_embed);
+      is_disqus_empty.remove();
+    }
+  }
+
+  window.addEventListener('scroll', function (e) {
+    var currentScroll = document.scrollingElement.scrollTop;
+    var disqus_target = document.getElementById('disqus_thread');
+
+    if (disqus_target && (currentScroll > disqus_target.getBoundingClientRect().top - 150)) {
+      load_disqus('disqus_shortname');
+    }
+  }, false);
+
+</script>
+<noscript>Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<!-- end comments --> 
+
       </article>
-      <!-- end page -->
+      <!-- end post -->
     </div>
   </div>
 </div>

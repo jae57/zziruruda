@@ -1,6 +1,62 @@
 [
   
     {
+      "title"    : "Scene에 대해",
+      "category" : "",
+      "tags"     : "Study",
+      "url"      : "/2021/03/19/01-scene-14/",
+      "date"     : "Mar 19, 2021"
+    } ,
+  
+    {
+      "title"    : "Framework",
+      "category" : "",
+      "tags"     : "Study",
+      "url"      : "/2021/03/15/01-framework-15-copy/",
+      "date"     : "Mar 15, 2021"
+    } ,
+  
+    {
+      "title"    : "SplitViewController 알아보기",
+      "category" : "",
+      "tags"     : "Study",
+      "url"      : "/2021/02/12/02-SplitViewController-16/",
+      "date"     : "Feb 12, 2021"
+    } ,
+  
+    {
+      "title"    : "숫자 세자리 수 마다 콤마 넣어서 가격 표시하기",
+      "category" : "",
+      "tags"     : "Post, iOS, Int, and Extension",
+      "url"      : "/2021/02/04/03-iOS-int-with-comma-every-3-digits-13/",
+      "date"     : "Feb 4, 2021"
+    } ,
+  
+    {
+      "title"    : "UILabel 에 취소선 스타일 적용하기",
+      "category" : "",
+      "tags"     : "Post, iOS, Label, and Style",
+      "url"      : "/2021/01/15/18-iOS-string-strikethrough-style-12-copy/",
+      "date"     : "Jan 15, 2021"
+    } ,
+  
+    {
+      "title"    : "defer 이 뭔가요?",
+      "category" : "",
+      "tags"     : "Swift and Post",
+      "url"      : "/2021/01/12/12-swift-defer-8/",
+      "date"     : "Jan 12, 2021"
+    } ,
+  
+    {
+      "title"    : "Swift 와 메모리 구조",
+      "category" : "",
+      "tags"     : "Study",
+      "url"      : "/2021/01/11/20-swift-with-memory-7/",
+      "date"     : "Jan 11, 2021"
+    } ,
+  
+    {
       "title"    : "Collection 의 indices 와 index(after:) 의 차이",
       "category" : "",
       "tags"     : "Post and Swift",
@@ -12,7 +68,7 @@
       "title"    : "Xcode에서 코드 일괄 변경 단축키",
       "category" : "",
       "tags"     : "Post and Xcode",
-      "url"      : "/2020/11/20/01-edit-all-in-xcode-5-copy/",
+      "url"      : "/2020/11/20/01-edit-all-in-xcode-5/",
       "date"     : "Nov 20, 2020"
     } ,
   
