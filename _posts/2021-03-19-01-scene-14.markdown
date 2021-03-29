@@ -8,20 +8,16 @@ featured: false
 ---
 결론 먼저 말하면,
 
-## Scene 은 멀티윈도우 환경을 지원하기 위해 나왔고, 
-이를 위해 App Delegate 에서 Scene Delegate 가 분리되어 나오는 구조적 변화가 일어났다.
+## Scene 은 멀티윈도우 환경을 지원하기 위해 나왔고, <br/> 이를 위해 App Delegate 에서 Scene Delegate 가 분리되어 나오는 구조적 변화가 일어났다.
 
-- WWDC
-
-덕분에 
-
-하나의 process 에 하나의 UI(화면)만 가능했던 것이 
-
+덕분에 <br>
+하나의 process 에 하나의 UI(화면)만 가능했던 것이 <br>
 하나의 process 에 여러개의 UI(화면)가 가능해졌다.
 
-애초에 왜 하나의 App 에는 하나의 Window 였나?
-
-[Framework](https://www.notion.so/Framework-ed74499753004e27877db8489a8164f2)
+💡 **애초에 왜 하나의 App 에는 하나의 Window 였나?** <br>
+생각해보면 먼저 있던 Cocoa 프레임워크에서 <br>
+touch 기반으로 사용자와 상호작용하는 앱 개발환경을 위한 Cocoa Touch를 만들게 되었고,<br>
+그렇다보니 기존의 Cocoa 프레임워크 개념들이 상당부분 따라오면서 window 개념도 자연스레 따라왔다고 유추해볼 수 있다. 👉 [Framework](../../../../2021/03/15/01-framework-15/)
 
 ### Scene
 
@@ -37,30 +33,28 @@ View 와 Window 에 관해서는 이전의 View Programming Guide 를 보면 알
 
 ### About Windows and Views
 
-공식문서 📑
+[[Apple 공식문서] About Windows and Views](https://developer.apple.com/library/archive/documentation/WindowsViews/Conceptual/ViewPG_iPhoneOS/Introduction/Introduction.html){: target="_blank"}
 
-[https://developer.apple.com/library/archive/documentation/WindowsViews/Conceptual/ViewPG_iPhoneOS/Introduction/Introduction.html](https://developer.apple.com/library/archive/documentation/WindowsViews/Conceptual/ViewPG_iPhoneOS/Introduction/Introduction.html)
+
 
 ### Multitasking 과 Multi windows 는 다른 개념!
 
 Apple 의 HIG문서에 보면 Multitasking 과 Multiple Windows 가 있다.
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a0427f77-8029-4491-a2e9-f026538626e8/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a0427f77-8029-4491-a2e9-f026538626e8/Untitled.png)
+<p align="center"><img src="/images/post14/01.png" alt="hig-category-system-capabilities"></p>
 
 ### iPad 의 Multiple Windows
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/37d16848-ee58-442e-86a4-45f2415eab21/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/37d16848-ee58-442e-86a4-45f2415eab21/Untitled.png)
+<p align="center"><img src="/images/post14/02.png" alt="iPad-multiwindows"></p>
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ee06c8e1-c405-4b33-a0f3-8b6e47c09f7b/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ee06c8e1-c405-4b33-a0f3-8b6e47c09f7b/Untitled.png)
+<p align="center"><img src="/images/post14/03.png" alt="iPad-multiwindows"></p>
 
-공식문서 📑
+공식문서 📑 <br>
+https://developer.apple.com/design/human-interface-guidelines/ios/system-capabilities/multiple-windows/
 
-[https://developer.apple.com/design/human-interface-guidelines/ios/system-capabilities/multiple-windows/](https://developer.apple.com/design/human-interface-guidelines/ios/system-capabilities/multiple-windows/)
-
-WWDC 🍿
-
-2019 Introducing Multiple Windows on iPad
-2019 Targeting Content with Multiple Windows
+WWDC 🍿 <br>
+2019 Introducing Multiple Windows on iPad <br>
+2019 Targeting Content with Multiple Windows 
 
 - 하나의 app 을 동시에 여러 화면을 띄워서 사용할 수 있다. ( 여러 앱을 동시에 띄워서 하는 건 좀 더 multi-tasking에 가까움 )
 - 프로세스 자체는 하나가 실행되었고, 이를 두 개의 화면에서 각각 보이도록 한 것! 
@@ -70,23 +64,23 @@ WWDC 🍿
 
 iPad app 의 Mac 버전에서 multiple windows를 지원하고 싶다면, iPad 에서도 지원해야함.
 
-Mutitasking
+## Mutitasking
 
 iPad 에서는 Slide Over, Split View, PiP  를 통해 mutitasking 이 가능하다.
 
 ### Slide Over
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a915fb28-094d-42c3-9409-830b4523d95e/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a915fb28-094d-42c3-9409-830b4523d95e/Untitled.png)
+<p align="center"><img src="/images/post14/04.png" alt="slide over"></p>
 
 ### Split View
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/97415b7a-c6fb-4c25-989d-bf03e59ef09f/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/97415b7a-c6fb-4c25-989d-bf03e59ef09f/Untitled.png)
+<p align="center"><img src="/images/post14/05.png" alt="split view"></p>
 
 - 화면을 둘로 쪼개서 나란히 놓고 사용할 수 있다.
 
 ### PiP ( Picture in Picture )
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4bec8e5c-b017-40f6-81cf-23e977afd2e3/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4bec8e5c-b017-40f6-81cf-23e977afd2e3/Untitled.png)
+<p align="center"><img src="/images/post14/06.png" alt="PiP"></p>
 
 - AVKit 안에 있다.
 - 다른 작업을 하면서 '동영상' 을 보고자 할 때 쓴다.
@@ -95,11 +89,10 @@ iPad 에서는 Slide Over, Split View, PiP  를 통해 mutitasking 이 가능하
 
 ### Split Views
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/42de8d63-9faf-4c17-9ab6-0fccaab5db1a/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/42de8d63-9faf-4c17-9ab6-0fccaab5db1a/Untitled.png)
+<p align="center"><img src="/images/post14/07.png" alt="split views"></p>
 
-공식문서 📑
-
-[https://developer.apple.com/design/human-interface-guidelines/ios/views/split-views/](https://developer.apple.com/design/human-interface-guidelines/ios/views/split-views/)
+공식문서 📑 <br>
+https://developer.apple.com/design/human-interface-guidelines/ios/views/split-views/
 
 - 주로 sidebar 기반 인터페이스를 만들고 싶을 때 사용한다.
 - 2~3개의 컬럼을 구성하는 인터페이스로 구성된다.
@@ -108,7 +101,7 @@ iPad 에서는 Slide Over, Split View, PiP  를 통해 mutitasking 이 가능하
 - 앱이 하나 실행되었고, 한 화면(scene) 내에서 여러 컬럼을 구성할 뿐이다.
 - Views 에 카테고리 되어있는 내용이다. Multitasking 에서의 Split View 와 다르다!
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e7d34abb-a4dc-4178-8f6d-46ff42bb20b6/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e7d34abb-a4dc-4178-8f6d-46ff42bb20b6/Untitled.png)
+<p align="center"><img src="/images/post14/08.png" alt="hig-views-category"></p>
 
 ~~Car Play 는 Scene 과 관련된 것인지? 일단은 없다. 그냥 카플레이 전용 모드가 있어서 그에 맞는 UI 에 맞게 보여지는 것 뿐.. ?~~ 
 

@@ -314,22 +314,16 @@
         <div class="post__content">
           <p>결론 먼저 말하면,</p>
 
-<h2 id="scene-은-멀티윈도우-환경을-지원하기-위해-나왔고">Scene 은 멀티윈도우 환경을 지원하기 위해 나왔고,</h2>
-<p>이를 위해 App Delegate 에서 Scene Delegate 가 분리되어 나오는 구조적 변화가 일어났다.</p>
+<h2 id="scene-은-멀티윈도우-환경을-지원하기-위해-나왔고--이를-위해-app-delegate-에서-scene-delegate-가-분리되어-나오는-구조적-변화가-일어났다">Scene 은 멀티윈도우 환경을 지원하기 위해 나왔고, <br /> 이를 위해 App Delegate 에서 Scene Delegate 가 분리되어 나오는 구조적 변화가 일어났다.</h2>
 
-<ul>
-  <li>WWDC</li>
-</ul>
+<p>덕분에 <br />
+하나의 process 에 하나의 UI(화면)만 가능했던 것이 <br />
+하나의 process 에 여러개의 UI(화면)가 가능해졌다.</p>
 
-<p>덕분에</p>
-
-<p>하나의 process 에 하나의 UI(화면)만 가능했던 것이</p>
-
-<p>하나의 process 에 여러개의 UI(화면)가 가능해졌다.</p>
-
-<p>애초에 왜 하나의 App 에는 하나의 Window 였나?</p>
-
-<p><a href="https://www.notion.so/Framework-ed74499753004e27877db8489a8164f2">Framework</a></p>
+<p>💡 <strong>애초에 왜 하나의 App 에는 하나의 Window 였나?</strong> <br />
+생각해보면 먼저 있던 Cocoa 프레임워크에서 <br />
+touch 기반으로 사용자와 상호작용하는 앱 개발환경을 위한 Cocoa Touch를 만들게 되었고,<br />
+그렇다보니 기존의 Cocoa 프레임워크 개념들이 상당부분 따라오면서 window 개념도 자연스레 따라왔다고 유추해볼 수 있다. 👉 <a href="../../../../2021/03/15/01-framework-15/">Framework</a></p>
 
 <h3 id="scene">Scene</h3>
 
@@ -347,29 +341,25 @@
 
 <h3 id="about-windows-and-views">About Windows and Views</h3>
 
-<p>공식문서 📑</p>
-
-<p><a href="https://developer.apple.com/library/archive/documentation/WindowsViews/Conceptual/ViewPG_iPhoneOS/Introduction/Introduction.html">https://developer.apple.com/library/archive/documentation/WindowsViews/Conceptual/ViewPG_iPhoneOS/Introduction/Introduction.html</a></p>
+<p><a href="https://developer.apple.com/library/archive/documentation/WindowsViews/Conceptual/ViewPG_iPhoneOS/Introduction/Introduction.html" target="_blank">[Apple 공식문서] About Windows and Views</a></p>
 
 <h3 id="multitasking-과-multi-windows-는-다른-개념">Multitasking 과 Multi windows 는 다른 개념!</h3>
 
 <p>Apple 의 HIG문서에 보면 Multitasking 과 Multiple Windows 가 있다.</p>
 
-<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a0427f77-8029-4491-a2e9-f026538626e8/Untitled.png" alt="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a0427f77-8029-4491-a2e9-f026538626e8/Untitled.png" /></p>
+<p align="center"><img src="/images/post14/01.png" alt="hig-category-system-capabilities" /></p>
 
 <h3 id="ipad-의-multiple-windows">iPad 의 Multiple Windows</h3>
 
-<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/37d16848-ee58-442e-86a4-45f2415eab21/Untitled.png" alt="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/37d16848-ee58-442e-86a4-45f2415eab21/Untitled.png" /></p>
+<p align="center"><img src="/images/post14/02.png" alt="iPad-multiwindows" /></p>
 
-<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ee06c8e1-c405-4b33-a0f3-8b6e47c09f7b/Untitled.png" alt="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ee06c8e1-c405-4b33-a0f3-8b6e47c09f7b/Untitled.png" /></p>
+<p align="center"><img src="/images/post14/03.png" alt="iPad-multiwindows" /></p>
 
-<p>공식문서 📑</p>
+<p>공식문서 📑 <br />
+https://developer.apple.com/design/human-interface-guidelines/ios/system-capabilities/multiple-windows/</p>
 
-<p><a href="https://developer.apple.com/design/human-interface-guidelines/ios/system-capabilities/multiple-windows/">https://developer.apple.com/design/human-interface-guidelines/ios/system-capabilities/multiple-windows/</a></p>
-
-<p>WWDC 🍿</p>
-
-<p>2019 Introducing Multiple Windows on iPad
+<p>WWDC 🍿 <br />
+2019 Introducing Multiple Windows on iPad <br />
 2019 Targeting Content with Multiple Windows</p>
 
 <ul>
@@ -382,17 +372,17 @@
 
 <p>iPad app 의 Mac 버전에서 multiple windows를 지원하고 싶다면, iPad 에서도 지원해야함.</p>
 
-<p>Mutitasking</p>
+<h2 id="mutitasking">Mutitasking</h2>
 
 <p>iPad 에서는 Slide Over, Split View, PiP  를 통해 mutitasking 이 가능하다.</p>
 
 <h3 id="slide-over">Slide Over</h3>
 
-<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a915fb28-094d-42c3-9409-830b4523d95e/Untitled.png" alt="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a915fb28-094d-42c3-9409-830b4523d95e/Untitled.png" /></p>
+<p align="center"><img src="/images/post14/04.png" alt="slide over" /></p>
 
 <h3 id="split-view">Split View</h3>
 
-<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/97415b7a-c6fb-4c25-989d-bf03e59ef09f/Untitled.png" alt="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/97415b7a-c6fb-4c25-989d-bf03e59ef09f/Untitled.png" /></p>
+<p align="center"><img src="/images/post14/05.png" alt="split view" /></p>
 
 <ul>
   <li>화면을 둘로 쪼개서 나란히 놓고 사용할 수 있다.</li>
@@ -400,7 +390,7 @@
 
 <h3 id="pip--picture-in-picture-">PiP ( Picture in Picture )</h3>
 
-<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4bec8e5c-b017-40f6-81cf-23e977afd2e3/Untitled.png" alt="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4bec8e5c-b017-40f6-81cf-23e977afd2e3/Untitled.png" /></p>
+<p align="center"><img src="/images/post14/06.png" alt="PiP" /></p>
 
 <ul>
   <li>AVKit 안에 있다.</li>
@@ -411,11 +401,10 @@
 
 <h3 id="split-views">Split Views</h3>
 
-<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/42de8d63-9faf-4c17-9ab6-0fccaab5db1a/Untitled.png" alt="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/42de8d63-9faf-4c17-9ab6-0fccaab5db1a/Untitled.png" /></p>
+<p align="center"><img src="/images/post14/07.png" alt="split views" /></p>
 
-<p>공식문서 📑</p>
-
-<p><a href="https://developer.apple.com/design/human-interface-guidelines/ios/views/split-views/">https://developer.apple.com/design/human-interface-guidelines/ios/views/split-views/</a></p>
+<p>공식문서 📑 <br />
+https://developer.apple.com/design/human-interface-guidelines/ios/views/split-views/</p>
 
 <ul>
   <li>주로 sidebar 기반 인터페이스를 만들고 싶을 때 사용한다.</li>
@@ -426,7 +415,7 @@
   <li>Views 에 카테고리 되어있는 내용이다. Multitasking 에서의 Split View 와 다르다!</li>
 </ul>
 
-<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e7d34abb-a4dc-4178-8f6d-46ff42bb20b6/Untitled.png" alt="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e7d34abb-a4dc-4178-8f6d-46ff42bb20b6/Untitled.png" /></p>
+<p align="center"><img src="/images/post14/08.png" alt="hig-views-category" /></p>
 
 <p><del>Car Play 는 Scene 과 관련된 것인지? 일단은 없다. 그냥 카플레이 전용 모드가 있어서 그에 맞는 UI 에 맞게 보여지는 것 뿐.. ?</del></p>
 
@@ -466,7 +455,7 @@
 
         <div class="post__navigation">
           
-          <a class="prev" href="/2021/03/15/01-framework-15-copy/" style="background-image: url(/images/4.jpg)">
+          <a class="prev" href="/2021/03/15/01-framework-15/" style="background-image: url(/images/4.jpg)">
             <div class="post__nav-box">
               <div class="post__nav post__nav__prev"><i class="ion ion-ios-arrow-back"></i> Previous
                 Page</div>

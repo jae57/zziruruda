@@ -6,10 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Framework</title>
+  <title>SplitViewController 알아보기</title>
   <meta name='description' content=''>
 
-  <link rel="canonical" href="http://localhost:4000/2021/03/15/01-framework-15-copy/">
+  <link rel="canonical" href="http://localhost:4000/2021/02/12/02-split-view-controller-16/">
   <link rel="alternate" type="application/rss+xml" title="ZZIRURU" href="/feed.xml">
 
   <!-- Fonts -->
@@ -278,7 +278,7 @@
   <div class="row">
     <div class="col col-12">
       <div class="image-box">
-        <img class="post-image" src="/images/4.jpg" alt="Framework">
+        <img class="post-image" src="/images/11(iOS).png" alt="SplitViewController 알아보기">
       </div>
     </div>
   </div>
@@ -299,48 +299,41 @@
             
           </div>
           
-          <h1 class="post-title">Framework</h1>
+          <h1 class="post-title">SplitViewController 알아보기</h1>
           <div class="post__meta">
             <div class="post__author">
               <a href="/about/" class="post__author-image"
                 style="background-image: url(/images/profile.jpg)" aria-label="김 찌루루's Picture"></a> <a href="/about/" class="post__author-link">김 찌루루</a>
             </div>
             <span class="post__date">
-              <time datetime="2021-03-15T01:12:35+09:00">Mar 15, 2021</time>
+              <time datetime="2021-02-12T02:12:35+09:00">Feb 12, 2021</time>
             </span>
           </div>
         </div>
 
         <div class="post__content">
-          <p>문서들 읽어보면 Cocoa, Cocoa Touch 도 프레임워크고, Cocoa Touch 프레임워크 내부에 속한 UIKit, Foundation 도 프레임워크라고 하네..</p>
+          <p align="center"><img src="/images/post16/01.png" /></p>
 
-<h3 id="cocoa">Cocoa</h3>
+<p>공식문서 📑 <br />
+https://developer.apple.com/documentation/uikit/uisplitviewcontroller</p>
 
-<ul>
-  <li>MacOS 에서 돌아가는 App 을 개발하기 위한 전용 프레임워크</li>
-</ul>
-
-<h3 id="cocoa-touch">Cocoa Touch</h3>
+<p>💡 Split View Controller 는 navigation stack에 push 할 수 없다.<br />
+다른 view controller 의 child로 install 될 수는 있지만 이것 역시 대부분의 경우 추천하지 않음.</p>
 
 <ul>
-  <li>Cocoa 이후에 나온 프레임워크로 Cocoa를 본따서 만들었기 때문에 사용자의 눈에 보이는 foreground 화면을 말하는 window 개념 역시 함께 따라왔다.</li>
-  <li>iOS 에서 돌아가는 App 을 개발하기 위한 전용 프레임워크</li>
-  <li>iPhone, iPod Touch, iPad</li>
+  <li>iOS 14 이후로 column-style 레이아웃을 지원한다. iOS 14 이전에는 Double Column 만 지원했다.</li>
 </ul>
 
-<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/637ad5f9-b6d1-476d-8894-85564696c004/Untitled.png" alt="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/637ad5f9-b6d1-476d-8894-85564696c004/Untitled.png" /></p>
+<p align="center"><img src="/images/post16/02.png" /></p>
 
-<h3 id="foundation">Foundation</h3>
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="nf">init</span><span class="p">(</span><span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="n">doubleColumn</span><span class="p">)</span>
+<span class="n">두</span> <span class="n">개의</span> <span class="n">child</span> <span class="n">view</span> <span class="n">controllers</span> <span class="n">를</span> <span class="n">관리하고</span><span class="p">,</span> <span class="n">primary</span> <span class="n">와</span> <span class="n">secondary</span> <span class="n">columns</span> <span class="n">에</span> <span class="n">위치한다</span><span class="o">.</span>
 
-<p>기초 클래스를 모아두었다. 표준 값, Collection, 문자열, 유틸리티, 날짜 등의 클래스가 포함되어 있다.</p>
+<span class="nf">init</span><span class="p">(</span><span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="n">tripleColumn</span><span class="p">)</span>
+<span class="n">세</span> <span class="n">개의</span> <span class="n">child</span> <span class="n">view</span> <span class="n">controllers</span> <span class="n">를</span> <span class="n">관리하고</span><span class="p">,</span> 
+<span class="n">primary</span><span class="p">,</span> <span class="n">supplementary</span> <span class="n">그리고</span> <span class="n">secondary</span> <span class="n">columns</span> <span class="n">에</span> <span class="n">위치한다</span><span class="o">.</span></code></pre></figure>
 
-<h3 id="uikit">UIKit</h3>
-
-<p>화면 처리와 관련된 클래스가 포함되어 있다.</p>
-
-<ul>
-  <li>Foundation 을 포함하므로 import UIKit 을 해주면 import Foundation 은 지워도 됨.</li>
-</ul>
+<p>TODO: 기본으로 navi감싸져있고 접근에 관해서 정리</p>
 
         </div>
 
@@ -350,24 +343,24 @@
           </div>
           <ul class="share__list list-reset">
             <li class="share__item">
-              <a class="share__link share__facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2021/03/15/01-framework-15-copy/"
+              <a class="share__link share__facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2021/02/12/02-split-view-controller-16/"
                 onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
                 title="Share on Facebook" rel="nofollow"><i class="ion ion-logo-facebook"></i></a>
             </li>
 
             <li class="share__item">
-              <a class="share__link share__twitter" href="https://twitter.com/intent/tweet?text=Framework&url=http://localhost:4000/2021/03/15/01-framework-15-copy/"
+              <a class="share__link share__twitter" href="https://twitter.com/intent/tweet?text=SplitViewController%20%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0&url=http://localhost:4000/2021/02/12/02-split-view-controller-16/"
                 onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
                 title="Share on Twitter" rel="nofollow"><i class="ion ion-logo-twitter"></i></a>
             </li>
 
             <li class="share__item">
-              <a class="share__link share__linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/2021/03/15/01-framework-15-copy/&title=Framework&summary=&source=ZZIRURU"
+              <a class="share__link share__linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/2021/02/12/02-split-view-controller-16/&title=SplitViewController%20%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0&summary=&source=ZZIRURU"
               onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn" rel="nofollow"><i class="ion ion-logo-linkedin"></i></a>
             </li>
 
             <li class="share__item">
-              <a class="share__link share__pinterest" href="http://pinterest.com/pin/create/button/?url=http://localhost:4000/2021/03/15/01-framework-15-copy/&amp;media=http://localhost:4000/images/4.jpg&amp;description=Framework"
+              <a class="share__link share__pinterest" href="http://pinterest.com/pin/create/button/?url=http://localhost:4000/2021/02/12/02-split-view-controller-16/&amp;media=http://localhost:4000/images/11(iOS).png&amp;description=SplitViewController%20%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0"
               onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Pinterest"
               rel="nofollow"><i class="ion ion-logo-pinterest"></i></a>
             </li>
@@ -376,19 +369,19 @@
 
         <div class="post__navigation">
           
-          <a class="prev" href="/2021/02/12/02-SplitViewController-16/" style="background-image: url(/images/11(iOS).png)">
+          <a class="prev" href="/2021/02/04/03-iOS-int-with-comma-every-3-digits-13/" style="background-image: url(/images/11(iOS).png)">
             <div class="post__nav-box">
               <div class="post__nav post__nav__prev"><i class="ion ion-ios-arrow-back"></i> Previous
                 Page</div>
-              <h4 class="post__nav__title">SplitViewController 알아보기</h4>
+              <h4 class="post__nav__title">숫자 세자리 수 마다 콤마 넣어서 가격 표시하기</h4>
             </div>
           </a>
           
           
-          <a class="next" href="/2021/03/19/01-scene-14/" style="background-image: url(/images/11(iOS).png)">
+          <a class="next" href="/2021/03/15/01-framework-15/" style="background-image: url(/images/4.jpg)">
             <div class="post__nav-box">
               <div class="post__nav post__nav__next">Next Page <i class="ion ion-ios-arrow-forward"></i></div>
-              <h4 class="post__nav__title">Scene에 대해</h4>
+              <h4 class="post__nav__title">Framework</h4>
             </div>
           </a>
           
