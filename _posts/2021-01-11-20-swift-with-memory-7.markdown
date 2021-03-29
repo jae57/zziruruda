@@ -59,8 +59,6 @@ Stack overflow: Stack 이 Heap 영역을 침범하는 경우 ex. 재귀호출 �
 [힙과 스택의 최대 할당 크기](https://bozeury.tistory.com/entry/%ED%9E%99Heap%EA%B3%BC-%EC%8A%A4%ED%83%9DStack%EC%9D%98-%EC%B5%9C%EB%8C%80-%ED%81%AC%EA%B8%B0#:~:text=%EB%B3%B4%ED%86%B5%20%EB%B9%84%EC%A3%BC%EC%96%BC%20%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4%EC%97%90%EC%84%9C%EB%8A%94%20%EB%94%94%ED%8F%B4%ED%8A%B8,%EC%A6%89%2C%20%EC%95%BD%201MB%EC%A0%95%EB%8F%84%20%EB%90%9C%EB%8B%A4.)
 [메모리 할당](https://www.geeksforgeeks.org/stack-vs-heap-memory-allocation/#:~:text=Heap%20Allocation%20%3A%20The%20memory%20is,to%20allocated%20and%20de%2Dallocate.)
 
-
-
 스택의 크기는 컴파일타임에 결정된다고 하는데
 그렇다면 아래의 경우 String 의 크기를 모른다면 어떻게 ??
 struct Person {
